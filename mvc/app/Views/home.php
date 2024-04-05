@@ -7,5 +7,26 @@
 </head>
 <body>
     <h1>Page Not Found</h1>
+
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        <?php foreach ($users as $user) {?>
+        <tr>
+            <td>
+               <?= $user->firstname ?> 
+            </td>
+            <td>
+            <?= $user->Lastname ?> 
+            </td>
+            <td>
+            <?= $user->email ?> 
+            </td>
+        </tr>
+        <?php }?>
+    </table>
 </body>
 </html>

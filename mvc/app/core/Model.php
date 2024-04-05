@@ -1,7 +1,8 @@
 <?php
 
 class Model extends Database
-{
+{    public $table;
+
     public function _construct()
     {
         if (!property_exists($this, 'table'))
@@ -13,6 +14,7 @@ class Model extends Database
     public function findAll()
     {
         $query = "select * from $this->table";
+
         $result = $this->query($query);
 
         if ($result)
@@ -76,7 +78,7 @@ class Model extends Database
 
         $query .= "where $column = :$column";
 
-        $data($column) = $id;
+        $data[$column] = $id;
         $this->query($query, $data);
 
         return false;
